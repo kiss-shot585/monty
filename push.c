@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * print_reverse - prints from bottom to top
+ * push - pushes an element to the stack
  * @stack: the pointer to the head
  * @line_number: the line number
  *
@@ -22,5 +22,5 @@ void push(stack_t **stack,
 	*head = new;
 
 	return (new);
-	fprintf(stdout, "%d\n", (*stack)->line_number);
+	fprintf(stdout, "%d\n", (*stack)->n);
 }
