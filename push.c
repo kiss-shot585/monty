@@ -6,10 +6,21 @@
  *
  * Return: void
  */
-void print_top(stack_t **stack,
+void push(stack_t **stack,
 	unsigned int line_number __attribute__((unused)))
 {
+	stack_t *new;
+	new = malloc(sizeof(stack_t));
 	if (*stack == NULL)
 		push_error(17);
-	fprintf(stdout, "%d\n", (*stack)->n);
+	
+	new->n = line_number;
+	new->prev = NULL;
+	new->next = *head;
+	if (*head != NULL)
+		(*head)->prev = new;
+	*head = new;
+
+	return (new);
+	fprintf(stdout, "%d\n", (*stack)->line_number);
 }
